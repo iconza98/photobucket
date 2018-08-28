@@ -1,0 +1,33 @@
+<mat-card>
+    <form (submit)="onEditProfile(profileForm)" #profileForm="ngForm">
+<mat-form-field>
+    <input
+    matInput
+    placeholder="First Name"
+    name="firstName"
+    ngModel
+    #firstNameInput="ngModel"
+    >
+  </mat-form-field>
+  <mat-form-field>
+      <input
+      matInput
+      placeholder="E-Mail"
+      name="email"
+      ngModel
+      #emailInput="ngModel"
+      >
+    </mat-form-field>
+    <mat-form-field>
+        <input
+        matInput
+        placeholder="Password"
+        type="password"
+        name="password"
+        ngModel
+        #passwordInput="ngModel"
+        >
+      </mat-form-field>
+<button mat-stroked-button  color="accent" type="submit">Submit</button>
+</form>
+</mat-card>

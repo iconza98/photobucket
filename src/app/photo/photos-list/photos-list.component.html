@@ -1,0 +1,24 @@
+<!--<mat-accordion *ngIf="photos && !isLoading">-->
+  <!--<mat-expansion-panel *ngFor="let photo of photos">-->
+    <!--<mat-expansion-panel-header>-->
+      <!--{{ photo.title }}-->
+    <!--</mat-expansion-panel-header>-->
+    <!--<div class="photo-image">-->
+      <!--<img [src]="photo.imagePath" [alt]="photo.title">-->
+    <!--</div>-->
+    <!--<p>{{ photo.content }}</p>-->
+    <!--<mat-action-row *ngIf="isAuthenticated">-->
+        <!--<a mat-button color="primary" [routerLink]="['/edit', photo.id]">EDIT</a>-->
+        <!--<button mat-button color ="warn" (click)="onDelete(photo.id)">DELETE</button>-->
+      <!--</mat-action-row>-->
+  <!--</mat-expansion-panel>-->
+<!--</mat-accordion>-->
+<!--<p class="info-text mat-body-1" *ngIf="photos.length <= 0 && !isLoading"> Posts Added Yet</p>-->
+<mat-grid-list cols="4" rowHeight="1:2">
+  <mat-grid-tile *ngFor="let photo of photos">
+    <mat-card>
+    <img [src]="photo.imagePath" [alt]="photo.title">
+      <button mat-button color ="warn" (click)="onDelete(photo.id)" *ngIf="isAuthenticated">DELETE</button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

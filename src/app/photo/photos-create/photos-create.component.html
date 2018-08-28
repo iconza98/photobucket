@@ -1,0 +1,17 @@
+<mat-card>
+  <form [formGroup]="imageForm" *ngIf="!isLoading" (submit)="onSavePost()">
+    <div>
+      <button mat-stroked-button type="button" (click)="imagePicker.click()">Pick Image</button>
+      <input type="file" #imagePicker (change)="onImagePicked($event)">
+    </div>
+    <div class="image-preview" *ngIf="imagePreview && imageForm.get('image').valid">
+      <img [src]="imagePreview" [alt]="imageForm.value.title">
+    </div>
+    <mat-divider></mat-divider>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Save
+    </button>
+  </form>
+</mat-card>

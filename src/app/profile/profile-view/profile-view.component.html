@@ -1,0 +1,33 @@
+<mat-card>
+    <form >
+    <mat-form-field>
+        <input
+        matInput
+        placeholder="First Name"
+        name="firstName"
+        [value]="firstName"
+        disabled
+        >
+      </mat-form-field>
+      <mat-form-field>
+          <input
+          matInput
+          placeholder="E-Mail"
+          name="email"
+          [value]="email"
+          disabled
+          >
+        </mat-form-field>
+        <mat-form-field>
+            <input
+            matInput
+            placeholder="Password"
+            type="password"
+            name="password"
+            [value]="password"
+            disabled
+            >
+          </mat-form-field>
+    <a mat-stroked-button  color="accent" [routerLink]="['/profile/edit']">Edit</a>
+    </form>
+    </mat-card>
